@@ -9,6 +9,12 @@ module.exports = appInfo => {
     // add your config here
     config.middleware = [];
 
+
+    config.cors = {
+        origin: ['http://localhost:1234'],
+        allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+    };
+
     config.mysql = {
         // database configuration
         client: {
@@ -17,11 +23,11 @@ module.exports = appInfo => {
             // port
             port: "3306",
             // username
-            user: "root",
+            user: "admin",
             // password
-            password: "root",
+            password: "",
             // database
-            database: "api"
+            database: "pulpeye"
         },
         // load into app, default is open
         app: true,
