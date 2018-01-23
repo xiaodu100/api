@@ -1,3 +1,18 @@
 {
-  "extends": "eslint-config-egg"
+    "extends": "eslint-config-egg",
+    "rules": {
+        "indent": [2, 4],
+        "array-bracket-spacing": [2, "never"],
+        "linebreak-style": [0, "windows"], //换行风格
+        "quotes": [1, "double"],
+        "semi": [0, "never"],
+        "semi-spacing": 0,
+        "no-extra-semi": 0,
+        "no-unused-vars": [1, { "vars": "all", "args": "none" }],
+        "no-trailing-spaces": 2,
+        "no-console": 1,
+        "strict": 0,
+        "eol-last": 0, //文件以单一的换行符结束
+        "comma-dangle": "off"
+    }
 }

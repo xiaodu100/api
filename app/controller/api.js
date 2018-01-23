@@ -1,21 +1,37 @@
-'use strict';
+"use strict";
 
-const Controller = require('egg').Controller;
+const Controller = require("egg").Controller;
+const mssql = require("../lib/mssql");
 
 class ApiController extends Controller {
     async index() {
-        this.ctx.body = 'hi, api';
+        this.ctx.body = {
+            status: 200,
+            data: [{
+                name: "zhangsan",
+                age: 21
+            }]
+        };
     }
-
-    async newsList() {
-        // db
-
-        let query = this.ctx.query;
+    async apiList() {
+        const data = await this.app.mysql.query("select * from sys_api");
+        const header = (() => {
+            if (data.length == 0) {
+                return [];
+            }
+            return Object.keys(data[0]);
+        })();
 
         this.ctx.body = {
-            query,
-            ctx: this.ctx
+            rows: data.length,
+            header,
+            data
         };
+    }
+    async apiMSSql() {
+        const data = await mssql.query("select * from tblApi");
+
+        this.ctx.body = data;
     }
 }
 

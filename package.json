@@ -1,11 +1,13 @@
 {
-  "name": "demo",
+  "name": "eggdemo",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "dependencies": {
     "egg": "^2.0.0",
-    "egg-scripts": "^2.1.0"
+    "egg-mysql": "^3.0.0",
+    "egg-scripts": "^2.1.0",
+    "mssql": "^4.1.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
